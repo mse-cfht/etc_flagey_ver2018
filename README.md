@@ -1,18 +1,19 @@
 MSE Exposure Time Calculator 
 ============================================================
 
-This package is developed by the following people
+Code developers and contributors:
 ---------------------------------
 The original ETC was developed and written by Nicolas Flagey
-(formerly, CFHT, currently, STScI).
+(formerly, CFHT, currently, STScI; nflagey@stsci.edu ).
 
-The slight code modification and github reporitory building done by
-Jen Sobeck.
+Slight code modification and github reporitory building done by
+Jen Sobeck (CFHT; sobeck@cfht.hawaii.edu).
 
 
-Release Note
+Release Note(s)
 ------------
 * Version 1.0  (2018)
+* Version 1.1  (2022)
 
 Requirements
 ------------
