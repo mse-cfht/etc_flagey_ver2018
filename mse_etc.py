@@ -512,7 +512,7 @@ class MseSpectrum:
             s4.thermalnoise = np.sqrt(s4.thermal)
 
         # Plots
-        output_file("plots.html")
+        output_file("html_java/mse_etc_output_plots.html")
 
         # Prepare figure
         if s4.meth == 'getSNR':
