@@ -27,19 +27,23 @@ Requirements
 
 Installation
 ------------
-To install the package, get the git repository by typing the following command on the terminal (if you have git installed):
+To install the package, retrieve the associate git repository and do
+the following: 
   
     git clone https://github.com/mse-cfht/etc_flagey_ver2018.git
     cd etc_flagey_ver2018
     python setup.py install
 
 
-Description
------------
-This package includes 
-
 Exposure Time Calculator (ETC)
 ------------------------------
+
+Description
+-----------
+The MSE ETC ver2018 has two calculation modes: signal-to-noise (SNR)
+and expsoure time. 
+
+
 The ETC can be run as follows:
 
     python run_etc.py 
