@@ -35,17 +35,14 @@ the following:
     python setup.py install
 
 
-Exposure Time Calculator (ETC)
-------------------------------
-
 Description
 -----------
 The MSE ETC ver2018 has two calculation modes: signal-to-noise (SNR)
 and expsoure time. 
 
-
-The ETC can be run as follows:
+Using a CLI, the ETC can be run as follows:
 
     python run_etc.py 
 
 
+In addition, the ETC may be accessed through the web API: https://etc-dev.cfht.hawaii.edu/mse/index.html
