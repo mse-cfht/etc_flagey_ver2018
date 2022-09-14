@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 __author__ = "Nicolas Flagey"
+__contributor__ = "Jen Sobeck"
 __status__ = "Development"
 
 # Imports
@@ -205,6 +206,7 @@ class MseSpectrum:
         """
 
         # Open filter and interpolate onto nominal wavelength grid
+        # Filter set includes ugriz and YJ
         filt = Table.read('FILTERS/' + self.band + '.dat', format='ascii')
         filtrans = np.interp(self.wgrid, filt['col1'], filt['col2'])
 
@@ -561,32 +563,32 @@ class MseSpectrum:
                 fig2.line(s4.wgrid[arm], s4.tgtflux[arm], line_color='#FF0000', line_alpha=.25)
                 fig2.line(s4.wgrid[arm], s4.skyflux[arm], line_color='#0000FF', line_alpha=.25)
                 # Overline median filtered spectra
-                fig2.line(s0.wgrid[arm], signal.medfilt(s0.tgtflux[arm], 101), line_color='#FFBB00', legend='Target')
-                fig2.line(s0.wgrid[arm], signal.medfilt(s0.skyflux[arm], 101), line_color='#0088BB', legend='Sky')
-                fig2.line(s1.wgrid[arm], signal.medfilt(s1.tgtflux[arm], 101), line_color='#DD8800', legend='Target + atmosphere')
-                fig2.line(s4.wgrid[arm], signal.medfilt(s4.tgtflux[arm], 101), line_color='#FF0000', legend='Target out')
-                fig2.line(s4.wgrid[arm], signal.medfilt(s4.skyflux[arm], 101), line_color='#0000FF', legend='Sky out')
+                fig2.line(s0.wgrid[arm], signal.medfilt(s0.tgtflux[arm], 101), line_color='#FFBB00', legend_label='Target')
+                fig2.line(s0.wgrid[arm], signal.medfilt(s0.skyflux[arm], 101), line_color='#0088BB', legend_label='Sky')
+                fig2.line(s1.wgrid[arm], signal.medfilt(s1.tgtflux[arm], 101), line_color='#DD8800', legend_label='Target + atmosphere')
+                fig2.line(s4.wgrid[arm], signal.medfilt(s4.tgtflux[arm], 101), line_color='#FF0000', legend_label='Target out')
+                fig2.line(s4.wgrid[arm], signal.medfilt(s4.skyflux[arm], 101), line_color='#0000FF', legend_label='Sky out')
 
             # Plot counts on detector
             for i in range(1 + int(np.max(s4.armgrid))):
                 arm = s4.armgrid == i
-                fig3.line(s4.wgrid[arm], s4.dark[arm], line_color='#00FF00', legend='Dark')
+                fig3.line(s4.wgrid[arm], s4.dark[arm], line_color='#00FF00', legend_label='Dark')
                 fig3.line(s4.wgrid[arm], s4.tgtdetec[arm], line_color='#FF0000', line_alpha=.25)
                 fig3.line(s4.wgrid[arm], s4.skydetec[arm], line_color='#0000FF', line_alpha=.25)
                 # Overline median filtered spectra
-                fig3.line(s4.wgrid[arm], signal.medfilt(s4.tgtdetec[arm], 101), line_color='#FF0000', legend='Target counts')
-                fig3.line(s4.wgrid[arm], signal.medfilt(s4.skydetec[arm], 101), line_color='#0000FF', legend='Sky counts')
+                fig3.line(s4.wgrid[arm], signal.medfilt(s4.tgtdetec[arm], 101), line_color='#FF0000', legend_label='Target counts')
+                fig3.line(s4.wgrid[arm], signal.medfilt(s4.skydetec[arm], 101), line_color='#0000FF', legend_label='Sky counts')
 
             # Throughput plot
             for i in range(1 + int(np.max(s4.armgrid))):
                 arm = s4.armgrid == i
-                fig4.line(s4.wgrid[arm], s4.thr_struc[arm], line_color='#FF0000', legend='Structure')
-                fig4.line(s4.wgrid[arm], s4.thr_m1[arm], line_color='#0000FF', legend='M1')
-                fig4.line(s4.wgrid[arm], s4.thr_pfue[arm], line_color='#AA4400', legend='PFUE')
-                fig4.line(s4.wgrid[arm], s4.inj[arm], line_color='#00AA66', legend='Inj.Eff.')
-                fig4.line(s4.wgrid[arm], s4.thr_poss[arm], line_color='#00FF88', legend='PosS')
-                fig4.line(s4.wgrid[arm], s4.thr_fits[arm], line_color='#8800FF', legend='FiTS')
-                fig4.line(s4.wgrid[arm], s4.thr_spectro[arm], line_color='#CCCC00', legend='Spectro')
+                fig4.line(s4.wgrid[arm], s4.thr_struc[arm], line_color='#FF0000', legend_label='Structure')
+                fig4.line(s4.wgrid[arm], s4.thr_m1[arm], line_color='#0000FF', legend_label='M1')
+                fig4.line(s4.wgrid[arm], s4.thr_pfue[arm], line_color='#AA4400', legend_label='PFUE')
+                fig4.line(s4.wgrid[arm], s4.inj[arm], line_color='#00AA66', legend_label='Inj.Eff.')
+                fig4.line(s4.wgrid[arm], s4.thr_poss[arm], line_color='#00FF88', legend_label='PosS')
+                fig4.line(s4.wgrid[arm], s4.thr_fits[arm], line_color='#8800FF', legend_label='FiTS')
+                fig4.line(s4.wgrid[arm], s4.thr_spectro[arm], line_color='#CCCC00', legend_label='Spectro')
                 # overall throughput
                 fig4.line(s4.wgrid[arm], (
                             s4.thr_struc * s4.thr_m1 * s4.thr_pfue * s4.thr_poss * s4.inj * s4.thr_fits * s4.thr_spectro)[
@@ -595,12 +597,12 @@ class MseSpectrum:
             # Dark, readout, Poisson noise ...
             for i in range(1 + int(np.max(s4.armgrid))):
                 arm = s4.armgrid == i
-                fig6.line(s4.wgrid[arm], s4.darknoise[arm], line_color='#00FF00', legend='Dark noise')
-                fig6.line(s4.wgrid[arm], s4.readout[arm], line_color='#FF8800', legend='Read noise')
+                fig6.line(s4.wgrid[arm], s4.darknoise[arm], line_color='#00FF00', legend_label='Dark noise')
+                fig6.line(s4.wgrid[arm], s4.readout[arm], line_color='#FF8800', legend_label='Read noise')
                 fig6.line(s4.wgrid[arm], s4.tgtnoise[arm], line_color='#FF0000', alpha=.25)
                 fig6.line(s4.wgrid[arm], s4.skynoise[arm], line_color='#0000FF', alpha=.25)
-                fig6.line(s4.wgrid[arm], signal.medfilt(s4.tgtnoise[arm], 101), line_color='#FF0000', legend='Target noise')
-                fig6.line(s4.wgrid[arm], signal.medfilt(s4.skynoise[arm], 101), line_color='#0000FF', legend='Sky noise')
+                fig6.line(s4.wgrid[arm], signal.medfilt(s4.tgtnoise[arm], 101), line_color='#FF0000', legend_label='Target noise')
+                fig6.line(s4.wgrid[arm], signal.medfilt(s4.skynoise[arm], 101), line_color='#0000FF', legend_label='Sky noise')
 
             # make a grid
             grid = gridplot([[fig1, fig2, fig6], [fig4, None, fig3]])
