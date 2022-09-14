@@ -1,16 +1,18 @@
 MSE Exposure Time Calculator 
 ============================================================
-
+.. image:: https://img.shields.io/badge/python->3.7-blue
+        :target: https://www.python.org
+		
 Code developers and contributors:
 ---------------------------------
-The original ETC was developed and written by Nicolas Flagey
-(formerly, CFHT, currently, STScI; nflagey@stsci.edu ).
+The original ETC was written and developed by Nicolas Flagey
+(formerly, CFHT, currently, STScI; nflagey@stsci.edu).
 
 Slight code modification and github reporitory building done by
 Jen Sobeck (CFHT; sobeck@cfht.hawaii.edu).
 
 
-Release Note(s)
+Release Notes
 ------------
 * Version 1.0  (2018)
 * Version 1.1  (2022)
