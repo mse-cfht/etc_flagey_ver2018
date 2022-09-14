@@ -1,7 +1,7 @@
 MSE Exposure Time Calculator 
 ============================================================
 
-[![Python: 3.6](https://img.shields.io/badge/Python-3.6-blue.svg)](#)
+[![Python: 3.6](https://img.shields.io/badge/Python->3.6-blue.svg)](#)
 		
 Code developers and contributors:
 ---------------------------------
