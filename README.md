@@ -27,7 +27,7 @@ Requirements
 
 Installation
 ------------
-To install the package, retrieve the associate git repository and do
+To install the package, retrieve the associated git repository and type
 the following: 
   
     git clone https://github.com/mse-cfht/etc_flagey_ver2018.git
