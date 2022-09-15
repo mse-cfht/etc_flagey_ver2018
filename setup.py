@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 
 setup(name='etc_flagey_2018',
-      version='1.1.0',
+      version='1.0.1',
       description='MSE Exposure Time Calculator (ETC) ver2018',
       author='Nicolas Flagey, Jennifer Sobeck',
       author_email='nflagey@stsci.edu',

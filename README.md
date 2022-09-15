@@ -1,4 +1,4 @@
-MSE Exposure Time Calculator 
+MSE Exposure Time Calculator (Flagey, ver2018)
 ============================================================
 
 [![Python: 3.6](https://img.shields.io/badge/Python->3.6-blue.svg)](#)
