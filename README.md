@@ -8,7 +8,7 @@ Code developers and contributors:
 The original ETC was written and developed by Nicolas Flagey
 (formerly, CFHT, currently, STScI; nflagey@stsci.edu).
 
-Slight code modification and github repository building done by
+Slight code modification and GitHub repository building done by
 Jen Sobeck (CFHT; sobeck@cfht.hawaii.edu).
 
 
