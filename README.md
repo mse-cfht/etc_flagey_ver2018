@@ -14,8 +14,8 @@ Jen Sobeck (CFHT; sobeck@cfht.hawaii.edu).
 
 Release Notes
 ------------
-* Version 1.0  (2018)
-* Version 1.1  (2022)
+* Version 1.0.0  (2018; main code generation by NF)
+* Version 1.0.1  (2022; minor code changes by JS)
 
 Requirements
 ------------
