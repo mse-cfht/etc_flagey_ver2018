@@ -215,7 +215,7 @@ class MseSpectrum:
             tgttemp_lam = self.wgrid.copy()
             tgttemp_flux, tgttemp_count = mag2flux(tgttemp_lam, self.tgtmag)  # in erg/s/cm2/A and ph/s/cm2/A
         else:
-            temp = Table.read('TEMPLATE2/' + self.template + '.dat', format='ascii')
+            temp = Table.read('TEMPLATE/' + self.template + '.dat', format='ascii')
             if self.template == 'qso1':
                 tgttemp_lam = temp['col1'] * 1e4  # microns to Angstroms
                 tgttemp_flux = temp['col2'] * 1e10 * const.c.value / tgttemp_lam ** 2  # f_nu to f_lambda
