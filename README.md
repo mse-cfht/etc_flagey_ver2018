@@ -8,7 +8,7 @@ Code developers and contributors:
 The original ETC was written and developed by Nicolas Flagey
 (formerly, CFHT, currently, STScI; nflagey@stsci.edu).
 
-Slight code modification and github reporitory building done by
+Slight code modification and github repository building done by
 Jen Sobeck (CFHT; sobeck@cfht.hawaii.edu).
 
 
@@ -38,9 +38,9 @@ the following:
 Description
 -----------
 The MSE ETC ver2018 has two calculation modes: signal-to-noise (SNR)
-and expsoure time. 
+and exposure time. 
 
-Using a CLI, the ETC can be run as follows:
+At the CLI, the ETC can be run as follows:
 
     python run_etc.py 
 
